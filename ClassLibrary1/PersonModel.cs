@@ -14,7 +14,7 @@ namespace DemoLibrary
         public string NombreCompleto{
             get
             {
-                return $"{Nombre} {Apellido}";
+                return $" {Nombre} {Apellido} ";
             }
         }
 

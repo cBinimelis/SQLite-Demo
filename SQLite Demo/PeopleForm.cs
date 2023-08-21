@@ -1,3 +1,4 @@
+using ClassLibrary1;
 using DemoLibrary;
 
 namespace SQLite_Demo
@@ -13,13 +14,10 @@ namespace SQLite_Demo
 
         private void LoadPeopleList()
         {
-            people.Add(new PersonModel { Nombre = "Cris", Apellido = "Binimelis" });
-            people.Add(new PersonModel { Nombre = "Eve", Apellido = "Sepúlveda" });
-            people.Add(new PersonModel { Nombre = "Señor", Apellido = "Mostachete" });
+            people = SqlDataAccess.LoadPerson();
 
             WireUpPeopleList();
         }
-
         private void WireUpPeopleList()
         {
             lb_listPerson.DataSource = null;
@@ -39,7 +37,7 @@ namespace SQLite_Demo
             p.Nombre = tbx_nombre.Text;
             p.Apellido = tbx_apellido.Text;
 
-            people.Add(p);
+            SqlDataAccess.SavePerson(p);
             WireUpPeopleList();
 
             tbx_nombre.Text = "";

@@ -57,7 +57,7 @@
             btn_refresh.TabIndex = 0;
             btn_refresh.Text = "REFRESCAR LISTA";
             btn_refresh.UseVisualStyleBackColor = true;
-            btn_add.Click += btn_refresh_Click;
+            btn_refresh.Click += btn_refresh_Click;
             // 
             // tbx_apellido
             // 
@@ -135,6 +135,7 @@
             Controls.Add(btn_refresh);
             Controls.Add(btn_add);
             Name = "PeopleForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
